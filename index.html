@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- index.html -->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/program-02.css">
+		<title>
+			ITSE 2302 Program-02: Jesse Strait
+		</title>
+	</head>
+	
+	<body>
+		<hr>
+		<div id="title">
+		<h1>ITSE 2302 - Program 02</h1>
+		<h2>Jesse Strait</h2>
+		<hr>
+		</div>
+		<div id="number1">
+			<h3>#1. Text concatination - Enter text into each text area, and hit button to put together in paragraph.</h3>
+			<input type="text" name="tex1" id="tex1"/>Text Area 1<br>
+			<input type="text" name="tex2" id="tex2"/>Text Area 2<br><br>
+			<button type="button" onclick="conCat()">concatinate text!</button><br>
+			<br>
+			<p id="conCat"></p>
+			<hr>
+		</div>
+		<div id="number2">
+			<h3>#2. Local Storage API, use buttons to store, retrieve and remove...</h3>
+			<button type="button" onclick="storeText()">Store</button>
+			<button type="button" onclick="displayText()">Display</button>
+			<button type="button" onclick="removeText()">Remove</button>
+			<br>
+			<p id="result1"> </p>
+			<p id="result2"></p>
+			<hr>
+		</div>
+		<div id="number3">
+			<h3>#3 String searching, Enter text in area to see if text is in Box.</h3>
+			<textarea id="textArea" rows="3" cols="40">The Rain in Spain Falls mainly in the Plain</textarea><br>
+			<input type="text" name="textSearch" id="textSearch">
+			<button type="button" onclick="searchText()">Search</button>
+			<br>
+			<p id="searchResult"></p>
+			<hr>
+		</div>
+		<div id="number4">
+			<h3>#4 Enter a String and 2 Numbers, perform some slice and dice!</h3>
+			<input type="text" name="textToSlice" id="textToSlice">ENTER STRING<br>
+
+			<input type="number" name="arg1" id="arg1">
+			<p style="display:inline" id="arg1Text">  Argument 1</p><br>
+			<input type="number" name="arg2" id="arg2">
+			<p style="display:inline" id="arg2Text">  Argument 2</p><br>
+			<button type="button" onclick="sliceText()">Slice</button>
+			
+			<button type="button" onclick="substringText()">Substring</button>
+			<button type="button" onclick="substrText()">Substr</button><br>
+			<p id="reString"></p>
+			<hr>
+
+		</div>
+		<div id="number5">
+			<h3>#5 Enter 3 strings and see replacements!</h3><br>
+			<input type="text" name="textOne" id="textOne">ENTER String 1<br>
+			<input type="text" name="textTwo" id="textTwo">ENTER Replacement for String 1<br>
+			<input type="text" name="textThree" id="textThree">ENTER String that contains String 1<br>
+			<p>Hit button to see replacment</p>
+			<button type="button" onclick="replaceText()">Replacement</button><br>
+			<p id="replaceTextUpper"></p>
+			<hr>
+		</div>
+		<div id="number6">
+			<h3>#6 Enter 3 flowers separated by the & symbol</h3><br>
+			<input type="text" name="textFlower" id="textFlower"><br>
+			<button type="button" onclick="flowerArray()">Generate Array</button><br>
+			<p id="displayArray"></p>
+			<hr>
+		</div>
+		<div id="number7">
+			<h3>#7 Click the Panda and watch the counter!!</h3><br>
+			<p id="pandaCounter"></p>
+			<p>
+        	<img alt="" src="images/panda.jpg" 
+            style="height: 270px; width: 500px" id="imgClickAndCount" onclick="clickCounter()"  />
+            
+			</p>
+			<hr>
+		</div>
+		<div id="number8">
+			<h3>#8 Math operations, divide by zero, and string math</h3><br>
+			<input type="number" name="numberOne" id="numberOne">Enter a number<br>
+			<input type="number" name="numberZero" id="numberZero">Enter zero<br>
+			<input type="text" name="texString" id="texString">Enter a string<br>
+			<button type="button" onclick="divByZeroString()">Click Here for Display</button><br>
+			<p id="divZero"></p>
+			<p id="addString"></p>
+			<hr>
+		</div>
+		<div id="number9">
+			<h3>#9 Parsing Ops</h3><br>
+			<input type="text" name="texNumber" id="texNumber"> Enter a number, this will be stored as a string<br>
+			<input type="text" name="texInt" id="texInt"> Enter a number, this will be stored as a string, can use decimals<br>
+			<input type="text" name="texFloat" id="texFloat"> Enter a number, this will be stored as a string, can use decimals, and can add a string at end ex: 100 years<br>
+			<button type="button" onclick="parseOps()">Click Here for Results</button><br>
+			<h4>Results Table</h4>
+			<table style="width:100%">
+			  <tr>
+			    <th>Number()</th>
+			    <th>parseInt()</th> 
+			    <th>parseFloat()</th>
+			  </tr>
+			  <tr>
+			    <td id ="numFun"></td>
+			    <td id ="parseFun"></td>
+			    <td id ="floatFun"></td>
+			  </tr>
+			</table>
+			<hr>
+		</div>
+		<div id="number10">
+			<h3>#10 Generating Random numbers, Hit the button!</h3><br>
+			<button type="button" onclick="genRandom()">Click Here for Random Numbers</button><br>
+			<table style="width:100%">
+			  <tr>
+			    <th>Number between 1 and 7</th>
+			    <th>Number between 33 and 255</th> 
+			    <th>Number between 572 and 723</th>
+			  </tr>
+			  <tr>
+			    <td id ="ranNum1"></td>
+			    <td id ="ranNum2"></td>
+			    <td id ="ranNum3"></td>
+			  </tr>
+			</table>
+			<hr>
+		</div>
+		<div id="number11">
+			<h3>#11 Exponent Ops, Enter 2 numbers and Click Button</h3><br>
+			<input type="number" name="baseNum" id="baseNum"> Enter a base Number<br>
+			<input type="number" name="exNum" id="exNum"> Enter an exponent<br>
+			<button type="button" onclick="genExpon()">Click Here for Calculation</button><br>
+			<p id="exRes"></p>
+			<hr>
+		</div>
+		<div id="number12">
+			<h3>#12 Date Ops, Click Button to display long and short dates</h3><br>
+			<button type="button" onclick="displayDates()">Click Here for Dates</button><br>
+			<p id="Date1"></p>
+			<p id="Date2"></p>
+			<p id="Date3"></p>
+			<p id="Date4"></p>
+			<hr>
+		</div>
+		<div id="number13">
+			<h3>#13 Date Ops, Enter date information in text boxes</h3><br>
+			<input type="number" name="dateNum" id="dateNum"> Enter a date number<br>
+			<input type="number" name="monthNum" id="monthNum"> Enter a month number<br>
+			<input type="number" name="yearNum" id="yearNum"> Enter a year number<br>
+			<button type="button" onclick="genDate()">Click Here for Date Entered</button><br>
+			<table style="width:100%">
+			  <tr>
+			    <th>Date</th>
+			    <th>Month</th> 
+			    <th>Year</th>
+			  </tr>
+			  <tr>
+			    <td id ="dateRes"></td>
+			    <td id ="monthRes"></td>
+			    <td id ="yearRes"></td>
+			  </tr>
+			</table>.
+			<hr>
+
+		</div>
+		<div id="number14">
+			<h3>#14 Enter 7 planet names separated by the space symbol</h3><br>
+			<input type="text" name="textPlanet" id="textPlanet"><br>
+			<button type="button" onclick="planetArray()">Generate</button><br>
+			<p id="displayArray2"></p>
+			<p id="displayString2"></p>
+			<hr>
+		</div>
+		<div id="number15">
+			<h3>#15 Remove from end of array and replace</h3>
+			<input type="text" name="textPlanet1" id="textPlanet1">Enter a new planet<br>
+			<input type="text" name="textPlanet2" id="textPlanet2">Enter a new planet<br>
+			<button type="button" onclick="planetRepArray()">Generate</button><br>
+			<p id="displayArray3"></p>
+			<hr>
+		</div>
+		<div id="number16">
+			<h3>#16 Remove first item from planet array.</h3>
+			<input type="text" name="textPlanet3" id="textPlanet3">Enter a new planet<br>
+			<button type="button" onclick="planetfirstArray()">Generate</button><br>
+			<p id="displayArray4"></p>
+			<hr>
+		</div>
+		<div id="number17">
+			<h3>#17 Add item to third position planet array, and sort</h3>
+			<input type="text" name="textPlanet4" id="textPlanet4">Enter a new planet<br>
+			<button type="button" onclick="planetThirdArray()">Generate</button><br>
+			<p id="displayArray5"></p>
+			<hr>
+		</div>
+		<div id="number18">
+			<h3>#18 split planet array into 2 arrays.</h3>
+			<button type="button" onclick="splitArray()">Generate</button><br>
+			<p id="displayArray6"></p>
+			<p id="displayArray7"></p>
+			<hr>
+		</div>
+		<div id="number19">
+			<h3>#19 Compare 2 numbers.</h3>
+			<input type="number" name="numOne" id="numOne">Enter a Number<br>
+			<input type="number" name="numTwo" id="numTwo">Enter a Number<br>
+			<button type="button" onclick="compareNumbers()">Compare</button><br>
+			<p id="displayCompare"></p>
+			<hr>
+		</div>
+		<div id="number20">
+			<h3>#20 Test number for being number and range.</h3>
+			<input type="text" name="numTest" id="numTest">Enter a Number<br>
+			<button type="button" onclick="testNumber()">Test</button><br>
+			<p id="displayTest"></p>
+			<p id="displayTest1"></p>
+			
+			<hr>
+
+		</div>
+		<div id="number21">
+			<h3>#21 Enter Type of metal.</h3>
+			<input type="text" name="metal" id="metal">Enter type of metal<br>
+			<button type="button" onclick="testMetal()">Test</button><br>
+			<p id="metalTest"></p>
+			<hr>
+		</div>
+		<div id="number22">
+			<h3>#22 Enter actors name.</h3>
+			<input type="text" name="actor" id="actor">Enter actors first name<br>
+			<button type="button" onclick="testActor()">Test</button><br>
+			<p id="actorTest"></p>
+			<hr>
+		</div>
+		<div id="number23">
+			<h3>#23 Enter an animal.</h3>
+			<input type="text" name="animal" id="animal">Enter name of animal<br>
+			<button type="button" onclick="testAnimal()">Test</button><br>
+			<p id="animalTest"></p>
+			<hr>
+		</div>
+		<div id="number24">
+			<h3>#24 planet loops.</h3>
+			
+			<button type="button" onclick="testPlanet()">Loops</button><br>
+			<p id="planetTest"></p>
+			<p id="planetTest2"></p>
+			<p id="planetTest3"></p>
+		</div>
+		<script src="scripts/program-02.js"></script>
+	</body>
